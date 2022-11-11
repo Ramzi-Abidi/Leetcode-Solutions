@@ -12,5 +12,6 @@ var twoSum = function(arr, target) {
             i++;
         }
     }
+    
     return [-1,-1];
 };
