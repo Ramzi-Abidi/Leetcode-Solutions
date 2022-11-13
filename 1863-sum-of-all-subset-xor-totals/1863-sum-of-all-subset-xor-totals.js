@@ -10,7 +10,6 @@ function sum(arr) {
                 s ^= arr[i];
             }
         }
-        console.log("s:"+s);
     return s;
 }
 
