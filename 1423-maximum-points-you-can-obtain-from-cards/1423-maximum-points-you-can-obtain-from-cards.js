@@ -15,7 +15,6 @@ var maxScore = function(arr, k) {
         j--;
         s += arr[end];
         end--;
-        console.log(max)
         max = Math.max(max, s);
     }
 
