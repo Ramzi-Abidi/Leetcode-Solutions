@@ -7,7 +7,7 @@ function combinations(n, chres, openParenthese, closedParenthese, res) {
     if (openParenthese !== n) {
         combinations(n, chres + "(", openParenthese + 1, closedParenthese, res);
     }
-     if (openParenthese !== closedParenthese) {
+     if (openParenthese > closedParenthese) {
         combinations(n, chres + ")", openParenthese, closedParenthese + 1, res);
     }
 }
