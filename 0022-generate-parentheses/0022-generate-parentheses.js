@@ -1,13 +1,14 @@
 function combinations(n, chres, openParenthese, closedParenthese, res) {
     if (openParenthese === n && closedParenthese === n) {
         res.push(chres);
-        return ;
+        return;
     }
 
-    if (openParenthese !== n) {
+    if (openParenthese <= n) {
         combinations(n, chres + "(", openParenthese + 1, closedParenthese, res);
     }
-     if (openParenthese > closedParenthese) {
+    
+    if (closedParenthese < openParenthese) {
         combinations(n, chres + ")", openParenthese, closedParenthese + 1, res);
     }
 }
