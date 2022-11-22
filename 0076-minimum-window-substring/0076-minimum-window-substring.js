@@ -1,5 +1,4 @@
 function anag(hash, hash1) {
-
     for (const key in hash) {
         if (!(hash[key] <= hash1[key])) {
             return false;
