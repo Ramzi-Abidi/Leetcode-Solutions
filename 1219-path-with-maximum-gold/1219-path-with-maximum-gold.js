@@ -5,13 +5,12 @@ var getMaximumGold = function (grid) {
             return;
         }
 
-        let ch = i + "," + j ;
-
-         if (visited.has(ch)) {
+        //already visited
+         if (visited[i][j]) {
             return;
         }
 
-        visited.add(ch) ;
+        visited[i][j] = true ;
 
         s += grid[i][j];
 
@@ -26,12 +25,19 @@ var getMaximumGold = function (grid) {
         //left
         dfs(grid, i, j - 1,s);
 
-        visited.delete(ch);
+        visited[i][j] = false ;
     }
 
-    let visited = new Set() ;
-    let max = 0;
+    let visited = [];
+    for (let i = 0; i < grid.length; i++) {
+        let arr = [] ;
+        for (let j = 0; j < grid[0].length; j++) {
+            arr.push(false);            
+        }
+        visited.push(arr);
+    }
 
+    let max = 0;
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[0].length; j++) {
             if (grid[i][j] !== 0) {
