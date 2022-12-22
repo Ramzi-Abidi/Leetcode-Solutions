@@ -21,7 +21,6 @@ var findLUSlength = function (arr) {
         return a.length - b.length;
     });
 
-    console.log(arr);
 
     let max = -1 ;
 
