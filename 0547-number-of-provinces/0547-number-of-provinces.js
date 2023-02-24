@@ -31,7 +31,7 @@ const findCircleNum = (isConnected) => {
             for (let i = 0; i < graph[curr].length; i++) {
                 if (visited[graph[curr][i]] === undefined) {
                     stack.push(graph[curr][i]);
-                    visited[graph[curr][i]] = true;
+                    
                 }
             }
         }
