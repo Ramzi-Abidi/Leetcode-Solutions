@@ -1,4 +1,4 @@
-var countSubarrays = function (nums, minK, maxK) {
+var countSubarrays = function (arr, minK, maxK) {
     let sum = 0;
     let badPosition = -1,
         minStart = 0,
@@ -6,20 +6,19 @@ var countSubarrays = function (nums, minK, maxK) {
     let minf = false,
         maxf = false;
 
-    for (let i = 0; i < nums.length; i++) {
-        let num = nums[i];
-        if (num < minK || num > maxK) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < minK || arr[i] > maxK) {
             minf = false;
             maxf = false;
             badPosition = i;
         }
 
-        if (num === minK) {
+        if (arr[i] === minK) {
             minf = true;
             minStart = i;
         }
 
-        if (num === maxK) {
+        if (arr[i] === maxK) {
             maxf = true;
             maxStart = i;
         }
